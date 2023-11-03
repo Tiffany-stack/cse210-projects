@@ -4,17 +4,41 @@ class Program
 {
     static void Main(string[] args)
     {
-        // Create a base "Assignment" object
-        Assignment a1 = new Assignment("Samuel Bennett", "Multiplication");
-        Console.WriteLine(a1.GetSummary());
+        Console.WriteLine("Welcome to the Mindfulness Program!");
 
-        // Now create the derived class assignments
-        MathAssignment a2 = new MathAssignment("Roberto Rodriguez", "Fractions", "7.3", "8-19");
-        Console.WriteLine(a2.GetSummary());
-        Console.WriteLine(a2.GetHomeworkList());
+        while (true)
+        {
+            Console.WriteLine("\nSelect an activity:");
+            Console.WriteLine("1. Breathing Activity");
+            Console.WriteLine("2. Reflection Activity");
+            Console.WriteLine("3. Listing Activity");
+            Console.WriteLine("4. Visualization Activity");
+            Console.WriteLine("5. Exit");
 
-        WritingAssignment a3 = new WritingAssignment("Mary Waters", "European History", "The Causes of World War II");
-        Console.WriteLine(a3.GetSummary());
-        Console.WriteLine(a3.GetWritingInformation());
+            Console.Write("Enter your choice: ");
+            string choice = Console.ReadLine();
+
+            switch (choice)
+            {
+                case "1":
+                    BreathingActivity.StartBreathingActivity();
+                    break;
+                case "2":
+                    ReflectionActivity.StartReflectionActivity();
+                    break;
+                case "3":
+                    ListingActivity.StartListingActivity();
+                    break;
+                case "4":
+                    VisualizationActivity.StartVisualizationActivity();
+                    break;
+                case "5":
+                    Console.WriteLine("Exiting the Mindfulness Program. Goodbye!");
+                    return;
+                default:
+                    Console.WriteLine("Invalid choice. Please select a valid option.");
+                    break;
+            }
+        }
     }
 }
