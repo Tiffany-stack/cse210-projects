@@ -6,25 +6,24 @@ class BreathingActivity
     public static void StartBreathingActivity()
     {
         Console.WriteLine("Welcome to the Breathing Activity.");
-        Console.WriteLine("This activity will help you relax by guiding you through breathing in and out slowly. Clear your mind and focus on your breathing.");
+        Console.WriteLine("Take a moment to relax and focus on your breathing.");
 
         // Allow the user to set the duration for breathing (in seconds)
         Console.Write("Enter the duration (in seconds): ");
         if (int.TryParse(Console.ReadLine(), out int duration))
         {
-            Console.WriteLine("Starting the Breathing Activity. Find a comfortable place and begin.");
+            Console.WriteLine("Starting the Breathing Activity. Close your eyes and begin.");
 
             // Breathing guidance
             for (int seconds = 0; seconds < duration; seconds++)
             {
-                if (seconds % 2 == 0)
-                    Console.WriteLine("Breathe in...");
-                else
-                    Console.WriteLine("Breathe out...");
+                Console.WriteLine("Breathe in...");
+                Thread.Sleep(1000); // Pause for 1 second
+                Console.WriteLine("Breathe out...");
                 Thread.Sleep(1000); // Pause for 1 second
             }
 
-            Console.WriteLine("You've completed the Breathing Activity. Take a moment to relax and refresh yourself.");
+            Console.WriteLine("You've completed the Breathing Activity. Take a moment to recenter yourself.");
         }
         else
         {
